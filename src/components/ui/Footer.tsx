@@ -27,7 +27,7 @@ function Footer() {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="group-hover:text-gray-700 transition hover:opacity-75"
+                  className="transition hover:opacity-75"
                 >
                   <span className="sr-only">Facebook</span>
 
@@ -51,7 +51,7 @@ function Footer() {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="group-hover:text-gray-700 transition hover:opacity-75"
+                  className="transition hover:opacity-75"
                 >
                   <span className="sr-only">Instagram</span>
 
@@ -75,7 +75,7 @@ function Footer() {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="group-hover:text-gray-700 transition hover:opacity-75"
+                  className="transition hover:opacity-75"
                 >
                   <span className="sr-only">Twitter</span>
 
@@ -95,7 +95,7 @@ function Footer() {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="group-hover:text-gray-700 transition hover:opacity-75"
+                  className="transition hover:opacity-75"
                 >
                   <span className="sr-only">GitHub</span>
 
@@ -119,7 +119,7 @@ function Footer() {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="group-hover:text-gray-700 transition hover:opacity-75"
+                  className="transition hover:opacity-75"
                 >
                   <span className="sr-only">Dribbble</span>
 
@@ -148,50 +148,35 @@ function Footer() {
 
               <ul className="mt-6 space-y-4 text-sm text-white">
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     1on1 Coaching{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Company Review{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Accounts Review{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     HR Consulting{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     SEO Optimisation{" "}
                   </a>
@@ -206,30 +191,21 @@ function Footer() {
 
               <ul className="mt-6 space-y-4 text-sm text-white">
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     About{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Meet the Team{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Accounts Review{" "}
                   </a>
@@ -244,30 +220,21 @@ function Footer() {
 
               <ul className="mt-6 space-y-4 text-sm text-white">
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Contact{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     FAQs{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Live Chat{" "}
                   </a>
@@ -282,40 +249,28 @@ function Footer() {
 
               <ul className="mt-6 space-y-4 text-sm text-white">
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Accessibility{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Returns Policy{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Refund Policy{" "}
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="group-hover:text-gray-700 transition hover:opacity-75"
-                  >
+                  <a href="#" className="transition hover:opacity-75">
                     {" "}
                     Hiring Statistics{" "}
                   </a>
