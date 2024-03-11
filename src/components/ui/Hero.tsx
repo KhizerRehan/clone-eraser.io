@@ -11,7 +11,6 @@ function Hero() {
       <div className="mx-auto max-w-screen-xl px-4 py-14">
         <div className="mx-auto max-w-xl text-center">
           <h1 className="capitalize text-sky-400 text-3xl font-extrabold sm:text-5xl">
-            <span className="text-orange-300">Clone </span>
             Documents & diagrams
             <strong className="font-extrabold text-white sm:block">
               {" "}
