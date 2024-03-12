@@ -1,7 +1,7 @@
 ## Lib:
 
 - Github Repo: https://github.com/rrs301/erasor_clone
-- Landing Page Lib: https://www.hyperui.dev/
+- Free Open Source Tailwind CSS Components: https://www.hyperui.dev/
 - UI Component Kit: https://ui.shadcn.com/
 
 ## Application Cloned:
