@@ -1,5 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -7,7 +12,7 @@ function Header() {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <Link className="block text-teal-600" href="#">
               <span className="sr-only">Home</span>
               {/* <svg
                 className="h-8"
@@ -26,90 +31,84 @@ function Header() {
                 width={100}
                 height={100}
               />
-            </a>
+            </Link>
           </div>
 
           <div className="md:flex md:items-center md:gap-12">
             <nav aria-label="Global" className="hidden md:block">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     About{" "}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     Careers{" "}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     History{" "}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     Services{" "}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     Projects{" "}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-white transition hover:text-gray-500"
                     href="#"
                   >
                     {" "}
                     Blog{" "}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-                <a
-                  className="rounded-md px-5 py-2.5 text-sm font-medium text-black shadow"
-                  href="#"
-                >
+                <LoginLink className="rounded-md px-5 py-2.5 text-sm font-medium text-white shadow">
                   Login
-                </a>
+                </LoginLink>
 
                 <div className="hidden sm:flex">
-                  <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-black hover:text-gray-600/75"
-                    href="#"
-                  >
-                    Register
-                  </a>
+                  <RegisterLink className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-black hover:text-gray-600/75">
+                    Sign up
+                  </RegisterLink>
                 </div>
               </div>
 
