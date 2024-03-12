@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
 
   if (!isUserAuthenticated) {
     return NextResponse.redirect(
-      new URL("/api/auth/login?post_login_redirect_url=/khizer", request.url)
+      new URL("/api/auth/login?post_login_redirect_url=/dashboard", request.url)
     );
   }
 }
