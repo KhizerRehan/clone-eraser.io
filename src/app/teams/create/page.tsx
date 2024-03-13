@@ -1,9 +1,36 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useMutation } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import { toast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 export default function CreateTeam() {
+  const [teamName, setTeamName] = useState("");
+  const createTeam = useMutation(api.teams.createTeam);
+  const { user }: any = useKindeBrowserClient();
+  const router = useRouter();
+
+  const createNewTeam = () => {
+    createTeam({
+      teamName: teamName,
+      createdBy: user?.email,
+    }).then((resp) => {
+      console.log("Team is Created");
+      toast({
+        title: "Team",
+        description: "team created successfully",
+      });
+
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1200);
+    });
+  };
   return (
     <div className="px-10 py-5 md:p-16">
       <Image
@@ -27,9 +54,17 @@ export default function CreateTeam() {
             className="mt-3"
             type="email"
             placeholder="Enter Team Name..."
+            onChange={(e: Event | any) => {
+              const value = (e.target as HTMLInputElement).value;
+              setTeamName(value);
+            }}
           />
         </div>
-        <Button className="bg-blue-500 hover:bg-blue-400 w-[30%] mt-5">
+        <Button
+          className="bg-blue-500 hover:bg-blue-600 w-[30%] mt-5"
+          disabled={!(teamName && teamName?.length > 0)}
+          onClick={createNewTeam}
+        >
           Create Team
         </Button>
       </div>

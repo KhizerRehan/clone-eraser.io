@@ -25,6 +25,9 @@
 - khizerrehands+1@gmail.com
 - password: testing@123
 
+- khizerrehands+2@gmail.com
+- password: testing@123
+
 ## Notes:
 
 - Authentication this Path matcher config is very important otherwise during back/forth middleware

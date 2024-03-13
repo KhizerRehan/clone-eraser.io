@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 export const getTeams = query({
   args: {
@@ -11,5 +11,17 @@ export const getTeams = query({
       .filter((q) => q.eq(q.field("createdBy"), args.email))
       .collect();
     return results;
+  },
+});
+
+export const createTeam = mutation({
+  args: {
+    createdBy: v.string(),
+    teamName: v.string(),
+  },
+  handler: async (ctx, args) => {
+    console.log(args);
+    const result = await ctx.db.insert("teams", args);
+    return result;
   },
 });
