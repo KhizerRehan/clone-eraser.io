@@ -24,7 +24,12 @@ const MENU = [
     icon: Settings,
   },
 ];
-function SidebarNavTop() {
+
+interface Props {
+  user: any;
+}
+function SidebarNavTop({ user }: Props) {
+  debugger;
   return (
     <Popover>
       <PopoverTrigger>
@@ -39,7 +44,7 @@ function SidebarNavTop() {
           <ChevronDown />
         </div>
       </PopoverTrigger>
-      <PopoverContent className="ml-8">
+      <PopoverContent className="ml-10 w-[16rem]">
         {/* Teams Section */}
         <div className="pb-2 text-[12px] font-bold">
           <h2>Team Name</h2>
@@ -66,6 +71,27 @@ function SidebarNavTop() {
             </div>
           </LogoutLink>
         </div>
+
+        {/* User Info Section */}
+        <Separator className="mb-2 bg-slate-100" />
+        {user && (
+          <div className="flex items-center gap-3 pt-2">
+            <Image
+              src={user?.picture}
+              alt={user?.given_name}
+              width={30}
+              height={30}
+              className="rounded-full"
+            />
+
+            <div className="text-[12px] flex flex-col">
+              <h2 className="font-bold">
+                {user?.given_name} {user?.family_name}
+              </h2>
+              <p className="text-slate-500">{user?.email}</p>
+            </div>
+          </div>
+        )}
       </PopoverContent>
     </Popover>
   );
