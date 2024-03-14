@@ -4,6 +4,7 @@ import { useConvex } from "convex/react";
 import React, { useEffect } from "react";
 import { api } from "../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
+import SideBar from "./_components/page";
 
 function DashboardLayout({
   children,
@@ -14,16 +15,15 @@ function DashboardLayout({
 
   useEffect(() => {
     if (user) {
-      debugger;
       checkTeam();
     }
-  }, []);
+  }, [user]);
 
   const checkTeam = async () => {
     const result = await convex.query(api.teams.getTeams, {
       email: user?.email,
     });
-    console.log("Teams", result);
+    console.log("Existing Teams", result);
     if (!result.length) {
       router.push("/teams/create");
     }
@@ -31,8 +31,12 @@ function DashboardLayout({
 
   return (
     <div>
-      Dashboard Layout
-      {children}
+      <section className="grid grid-cols-4">
+        <aside className="h-screen bg-gray-100 w-72 border-black-200 border-r">
+          <SideBar />
+        </aside>
+        <main className="bg-sky-400 grid-cols-3">{children}</main>
+      </section>
     </div>
   );
 }
