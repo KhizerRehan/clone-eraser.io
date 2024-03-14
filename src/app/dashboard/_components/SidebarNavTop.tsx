@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronDown, LogOut, Settings, User } from "lucide-react";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
@@ -9,6 +9,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
+import { useConvex } from "convex/react";
+import { useRouter } from "next/navigation";
+import { api } from "../../../../convex/_generated/api";
 
 const MENU = [
   {
@@ -18,18 +21,47 @@ const MENU = [
     icon: User,
   },
   {
-    id: 1,
+    id: 2,
     name: "Settngs",
     path: "/settings",
     icon: Settings,
   },
 ];
 
+interface Team {
+  _id: number;
+  teamName: string;
+}
+
 interface Props {
   user: any;
 }
 function SidebarNavTop({ user }: Props) {
-  debugger;
+  const convex = useConvex();
+  const router = useRouter();
+  const [teamList, setTeamList] = useState<Team[]>([]);
+  const [activeTeam, setActiveTeam] = useState<Team>();
+
+  useEffect(() => {
+    if (user) {
+      getTeamList();
+    }
+  }, [user]);
+
+  const getTeamList = async () => {
+    const result: Team[] = await convex.query(api.teams.getTeams, {
+      email: user?.email,
+    });
+    setTeamList(result);
+    setActiveTeam(result[0]);
+  };
+
+  const onMenuItemClick = (item: any) => {
+    if (item?.path.includes("teams/create")) {
+      router.push(item.path);
+    }
+  };
+
   return (
     <Popover>
       <PopoverTrigger>
@@ -40,14 +72,26 @@ function SidebarNavTop({ user }: Props) {
             width={40}
             height={40}
           />
-          <h3 className=" font-extrabold text-[15px]">Team Name</h3>
+          <h3 className=" font-extrabold text-[15px]">
+            {activeTeam?.teamName}
+          </h3>
           <ChevronDown />
         </div>
       </PopoverTrigger>
-      <PopoverContent className="ml-10 w-[16rem]">
+      <PopoverContent className="ml-7">
         {/* Teams Section */}
-        <div className="pb-2 text-[12px] font-bold">
-          <h2>Team Name</h2>
+        <div className="pb-2 text-[12px]">
+          {teamList.map((team: Team, index: React.Key | null | undefined) => (
+            <h2
+              key={index}
+              className={`p-2 hover:bg-sky-300 hover:text-white rounded-lg mb-1 cursor-pointer
+            ${activeTeam?._id === team._id && "bg-sky-400 text-white font-bold"}
+            `}
+              onClick={() => setActiveTeam(team)}
+            >
+              {team.teamName}
+            </h2>
+          ))}
         </div>
         <Separator className="mt-2 bg-slate-100" />
         {/* Actions Section */}
@@ -56,6 +100,9 @@ function SidebarNavTop({ user }: Props) {
             <div
               key={item.id}
               className="cursor-pointer flex items-center gap-2 p-2 text-sm"
+              onClick={() => {
+                onMenuItemClick(item);
+              }}
             >
               <item.icon className="h-4 w-4" />
               <span className="text-[12px]">{item.name}</span>
