@@ -4,7 +4,7 @@ import { useConvex } from "convex/react";
 import React, { useEffect } from "react";
 import { api } from "../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
-import SideBar from "./_components/page";
+import SideBar from "./_components/SideBar";
 
 function DashboardLayout({
   children,
